@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="planetsModelStoreContainer" CdmEntityContainer="planetsEntities">
+    <EntitySetMapping Name="Planets">
+      <EntityTypeMapping TypeName="planetsModel.Planet">
+        <MappingFragment StoreEntitySet="Planets">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PlanetType" ColumnName="PlanetType" />
+          <ScalarProperty Name="DistanceFromSun" ColumnName="DistanceFromSun" />
+          <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+          <ScalarProperty Name="DayLength" ColumnName="DayLength" />
+          <ScalarProperty Name="YearLength" ColumnName="YearLength" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

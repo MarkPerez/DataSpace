@@ -1,0 +1,81 @@
+﻿@model IEnumerable<DataSpace.Models.Planet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 id="header">Planets of the Solar System</h2>
+
+<p>
+    @Html.ActionLink("Create", "Create") 
+    <span class="pull-right">@Html.ActionLink("Our Solar System", "SolarSystem")</span>
+
+    @using (Html.BeginForm("Index", "Planets", FormMethod.Get))
+    {
+        @:Planet Type: @Html.DropDownList("searchType", "All")
+        @:Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Filter" />    
+    }    
+</p>
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlanetType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistanceFromSun)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diameter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearLength)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @if (item.Picture != null)
+            {
+                <img src="@Url.Content(item.Picture)" height="100" width="100" />
+            }            
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlanetType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistanceFromSun)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diameter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayLength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearLength)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,96 @@
+﻿@model DataSpace.Models.Planet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@if (Model.Picture != null)
+{
+    <style>
+    body{
+        background-image: url('@Url.Content(Model.Picture)'), url("~/Content/images/milky-way-1016309_1920.jpg");
+<img src="~/Content/images/milky-way-1016309_1920.jpg" />
+        background-size: 900px 900px, cover;
+        background-repeat: no-repeat, no-repeat;
+        color: white;
+    }
+    </style>
+
+    if (Model.Name == "Saturn")
+    {
+        <style>
+                body {
+                    background-image: url("~/Content/images/saturn-153576_1280.png"), url("~/Content/images/milky-way-1016309_1920.jpg");
+                    background-size: 1600px 900px, cover;
+                    background-repeat: no-repeat, no-repeat;
+                    color: white;
+                }
+    </style>
+    }
+}
+
+<h2 id="header">Details</h2>
+
+<div>
+    <h4 id="nameFade">@Model.Name</h4>
+    <hr />
+    <div class="viewSections" id="dropDown">
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name):
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PlanetType):
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlanetType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DistanceFromSun):
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DistanceFromSun)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Diameter):
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Diameter)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DayLength):
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DayLength)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.YearLength):
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.YearLength)
+            </dd>
+
+        </dl>
+
+        <p>            
+            @Html.ActionLink("To Our Solar System", "SolarSystem") |
+            @Html.ActionLink("To DataSpace", "Index")
+        </p>
+    </div>
+</div>
+
